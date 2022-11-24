@@ -15,3 +15,13 @@ while True:
         break
 print(f"Podane liczby: {numbers}")
 print(f"Średnia z liczb podzielnych przez 10: {sum(numbers)/len(numbers)}")
+
+# Równanie s(3) = 1/3 + 1/3*6 + 1/3*6*9
+a = 3
+sum = 0
+for x in range(0, a + 1):
+    num = 1
+    for y in range(x):
+        num *= (y + 1) * 3
+    sum += 1 / num
+print(f"Suma wyrażenia: {sum}")
