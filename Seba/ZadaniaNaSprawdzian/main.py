@@ -25,3 +25,10 @@ for x in range(0, a + 1):
         num *= (y + 1) * 3
     sum += 1 / num
 print(f"Suma wyrażenia: {sum}")
+
+# Litery w zdaniu
+sentence = "Ala ma kota"
+for char in sentence:
+    if sentence.count(char) != 0 and char != " ":
+        print(f"{char}: {sentence.count(char)}")
+        sentence = sentence.replace(char, " ")
