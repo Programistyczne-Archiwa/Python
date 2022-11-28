@@ -5,8 +5,9 @@ jeszcze jak pierdoli o tych zadaniach na poczatku to jest takie kurwa
 "AAAA TEEERAAAAZ"
 "BĘDZIEEEECIEEE"
 "BĘĘĘĘDZIEEEEECIEEEEE"
-"LIIIIIICZYYYYYĆ PAAALinDROMNY"
-jakby kurwa była jakąś jebaną pisarą
+"LIIIIIICZYYYYYĆ AAASCIIIIIIJEIWOAJEWAONFEATGSEK"
+jakby myślała że jest kurwa jakąś jebaną pisarą
+a nie kurwa waliła konia w pracowni sprzed 20 lat
 i kurwa pisała dialogi do jebanego dramatu
 jakby mi nie starczyło że jestem kurwa w ekonomiku 
 brakuje żeby śpiewać zaczęła i kurwa rymować jak gada
