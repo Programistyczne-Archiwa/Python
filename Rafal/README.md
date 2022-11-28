@@ -8,5 +8,5 @@ jeszcze jak pierdoli o tych zadaniach na poczatku to jest takie kurwa
 "LIIIIIICZYYYYYĆ PAAALinDROMNY"
 jakby kurwa była jakąś jebaną pisarą
 i kurwa pisała dialogi do jebanego dramatu
-jądro ciemności przedwiośnie kurwa dziady
+jakby mi nie starczyło że jestem kurwa w ekonomiku 
 brakuje żeby śpiewać zaczęła i kurwa rymować jak gada
