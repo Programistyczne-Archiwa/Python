@@ -16,3 +16,13 @@ for bin_number in bin_numbers:
 print("a) Liczba binarnych liczb, w których liczba zer od liczby jedynek wynosi:", count)
 
 # b)
+
+count = {"2": 0, "8": 0}
+for bin_number in bin_numbers:
+    if bin_number[-1] == "0":
+        count["2"] += 1
+    if len(bin_number) > 4:
+        if bin_number[-3:] == "000":
+            count["8"] += 1
+
+print(f"b) Liczby podzielne przez 2: {count['2']}, liczby podzielne przez 8: {count['8']}")
