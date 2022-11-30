@@ -1,10 +1,10 @@
 # a)
 
 file = open("liczby.txt", "r")
-bin_numbers = file.read().splitlines()
+ns = file.read().splitlines()
 
 count = 0
-for bin_number in bin_numbers:
+for bin_number in ns:
     count_digit = {"1": 0, "0": 0}
     for bin_digit in str(bin_number):
         if bin_digit == "1":
@@ -17,12 +17,8 @@ print("a) Liczba binarnych liczb, w których liczba zer od liczby jedynek wynosi
 
 # b)
 
-count = {"2": 0, "8": 0}
-for bin_number in bin_numbers:
-    if bin_number[-1] == "0":
-        count["2"] += 1
-    if len(bin_number) > 4:
-        if bin_number[-3:] == "000":
-            count["8"] += 1
-
-print(f"b) Liczby podzielne przez 2: {count['2']}, liczby podzielne przez 8: {count['8']}")
+ns=open("liczby.txt", "r").read().splitlines(); d=0; o=0
+for n in ns:
+    if n[-1]=="0":d+=1
+    if n[-3:]=="000":o+=1
+print(d,o)
