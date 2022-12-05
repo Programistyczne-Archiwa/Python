@@ -37,3 +37,14 @@ for number in numbers:
         
 print("Cyfry występujące w liczniku i mianowniku:", digits)
     
+# c) Najwiekszy ułamek
+
+max = {"idx": 0, "value": 0, "denominator": 0, "meter": 0}
+for idx, number in enumerate(numbers):
+    meter = number.split(" ")[0]
+    denominator = number.split(" ")[1]
+
+    if int(meter) / int(denominator) > max["value"] or (int(meter) / int(denominator) == max["value"] and int(denominator) < max["denominator"]):
+        max["idx"], max["value"], max["denominator"], max["meter"] = idx, int(meter) / int(denominator), int(denominator), int(meter)
+
+print("Największy ułamek:", max)
