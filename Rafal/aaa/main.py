@@ -21,11 +21,14 @@ for line in lines:
     if r>=2:
         print(line)
         del lines[lines.index(line)]
-
+print("********************************************************")
 # Zadanie 3
 
 for line in lines:
     conditions = False
-    if any(letter.isdigit() for letter in line):
-        warunki = True
-    if
+    if any(letter.isdigit() for letter in line) and any(letter.isupper() for letter in line) and any(letter.islower() for letter in line):
+        conditions = True
+    else:
+        conditions = False
+    if conditions:
+        print(line)
