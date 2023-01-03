@@ -27,7 +27,7 @@ for text in texts:
     elif "1" not in text:
         count["0"] += 1
 print("c)", count)
-#seba nie zdasz egzaminu na prawko huehuebeuehheuueheuhe
+
 # d)
 count = {}
 for i in range(1, 17):
