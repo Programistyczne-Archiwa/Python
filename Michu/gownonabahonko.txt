@@ -1,0 +1,191 @@
+import os
+g1, g2, g3 = [0] * 1095, [0] * 1095, [0] * 1095
+t1, t2, t3 = [0] * 1095, [0] * 1095, [0] * 1095
+def nasystem(l, b):
+    s = ""
+    znak = 1
+    if l < 0:
+        znak = -1
+        l = -l
+    if not l:
+        return "0"
+    while l > 0:
+        z = str(l % b)
+        s = z + s
+        l = l // b
+    if znak < 0:
+        s = "-" + s
+    return s
+
+
+def zsystemu(s, b):
+    wynik = 0
+    i = 0
+    znak = 1
+    if s[0] == "-":
+        znak = -1
+        i = 1
+    while i < len(s):
+        wynik = wynik * b + (ord(s[i]) - 48)
+        i += 1
+    return znak * wynik
+def zad581():
+    min1 = t1[0]
+    min2 = t2[0]
+    min3 = t3[0]
+    for i in range(1, 1095):
+        if t1[i] < min1:min1 = t1[i]
+        if t2[i] < min2:min2 = t2[i]
+        if t3[i] < min3:min3 = t3[i]
+    print("58.1:")
+    print("Stacja 1:" + nasystem(min1, 2))
+    print("Stacja 2" + nasystem(min2, 2))
+    print("Stacja 3" + nasystem(min3, 2))
+
+
+def zad582():
+    licznik = 0;dzien = 12
+    for i in range(1095):
+        if g1[i] != dzien and g2[i] != dzien and g3[i] != dzien:licznik += 1
+        dzien += 24
+    print("58.2:")
+    print(licznik)
+
+
+def zad583():
+    min1=t1[0];min2=t2[0];min3=t3[0];licznik = 1
+    for i in range(1, 1095):
+        ile = 0
+        if t1[i] > min1:min1 = t1[i];ile += 1
+        if t2[i] > min2:min2 = t2[i];ile += 1
+        if t3[i] > min3:min3 = t3[i];ile += 1
+        if ile > 0:licznik += 1
+    print("58.3:")
+    print(licznik)
+
+
+def zad584():
+    maxS = 0
+    mi, mj = 0, 0
+    for i in range(1095):
+        for j in range(i + 1, 1095):
+            kwadrat = (t1[i] - t1[j]) * (t1[i] - t1[j])
+            rij = kwadrat // (j - i)
+            if rij * (j - i) < kwadrat:
+                rij += 1
+            if rij > maxS:
+                maxS = rij
+                mi = i
+                mj = j
+    print("58.4:")
+    print(maxS)
+
+
+def main():
+    plik1 = open("dane/58/dane_systemy1.txt", "r")
+    plik2 = open("dane/58/dane_systemy2.txt", "r")
+    plik3 = open("dane/58/dane_systemy3.txt", "r")
+    for i in range(1095):
+        g, t = plik1.readline().split()
+        g1[i] = zsystemu(g, 2)
+        t1[i] = zsystemu(t, 2)
+        g, t = plik2.readline().split()
+        g2[i] = zsystemu(g, 4)
+        t2[i] = zsystemu(t, 4)
+        g, t = plik3.readline().split()
+        g3[i] = zsystemu(g, 8)
+        t3[i] = zsystemu(t, 8)
+    zad581()
+    zad582()
+    zad583()
+    zad584()
+main()
+---------------------------------------------
+import math
+
+
+def zad591():
+    plik = open("dane/59/liczby.txt", "r");zawartosc = plik.readlines();liczby = list(map(int, zawartosc));licznik = 0
+    for liczba in liczby:
+        tablica = [];
+        x = 3
+        if liczba % 2 == 1:
+            p = liczba ** 0.5
+            while liczba > 1 and x <= p:
+                if liczba % x == 0:tablica.append(x);liczba //= x
+                else:x += 1
+            if tablica == [] or liczba != 1: tablica.append(liczba)
+            if len(set(tablica)) == 3: licznik += 1
+    print("59.1");print(licznik)
+
+
+def zad592():
+    plik = open("dane/59/liczby.txt", "r");zawartosc = plik.read().splitlines();licznik = 0
+    for x in zawartosc:
+        a = x[::-1];b = int(x);c = int(a)+b
+        if(str(c)==str(c)[::-1]):
+            licznik=licznik+1
+    print("59.2")
+    print(licznik)
+def zad593():
+    plik = open("dane/59/liczby.txt","r");zawartosc = plik.read().splitlines();j=1;count = 0;minimum = 0;maximum = 0;moce = [0, 0, 0, 0, 0, 0, 0, 0];print("59.3")
+    """powers={
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+    }"""
+    for x in zawartosc:
+        temp = int(x)
+        count_power = 0
+        while temp >= 10:
+            new_num = 1
+            for i in [*str(temp)]:
+                new_num *= int(i)
+            temp = new_num
+            count_power += 1
+        if count_power == 1:
+            if minimum == 0 or minimum > int(x):
+                minimum = int(x)
+            if maximum < int(x):
+                maximum = int(x)
+        moce[count_power - 1] += 1
+
+    for i in range(0,8):print(str(j)+":"+str(moce[i]));j+=1
+    print(minimum,maximum)
+
+
+def main():
+    zad591()
+    zad592()
+    zad593()
+main()
+----------------------------------------------------------------
+def zad601():
+    plik = open("dane/60/liczby.txt","r");zawartosc = plik.read().splitlines();tablica = [0,1];licznik=0
+    for i in zawartosc:
+        if int(i) < 1000:
+            licznik+=1
+            temp = tablica[1]
+            tablica[1] = i
+            tablica[0] = temp
+    print("60.1");print(licznik);print(tablica)
+
+def zad602():
+    plik = open("dane/60/liczby.txt","r")
+    zawartosc = plik.read().splitlines()
+    print("60.2")
+    for i in zawartosc:
+        tablica = []
+        for j in range(1, int(i) + 1):
+            if int(i) % j == 0:
+                tablica.append(j)
+        if len(tablica) == 18:print(tablica[-1]);print(tablica)
+def main():
+    zad601()
+    zad602()
+main()
